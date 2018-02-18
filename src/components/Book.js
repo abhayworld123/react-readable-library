@@ -17,6 +17,7 @@ export default class Book extends Component {
                         height: 190,
                         backgroundImage: `url("${ book.imageLinks.thumbnail }")`
                     }}/>
+                    
                     <div className="book-shelf-changer">
                         <select onChange={this.onBookShelfChange} defaultValue={book.shelf}>
                             <option value="none" disabled>Move to...</option>

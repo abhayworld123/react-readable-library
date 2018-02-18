@@ -196,8 +196,8 @@ body, .app {
 }
 
 .book-shelf-changer select option {
-  background: red;
-  color: #fff;
+  background:#fff ;
+  color:var(--main-bg-color);
   padding: 20px 80px !important;
   width: 592px;
 }
