@@ -15,8 +15,7 @@ export default class Book extends Component {
             book.authors=[];
         }
 
-        // var imgg1 = 'https://www.revlocal.com/Files/FeedImages/12-Digital-Marketing-Ideas-for-Small-Businesses-in-2018.png';
-        var fallback='https://davismarketingcompany.com/wp-content/uploads/2016/01/avatar_placeholder_small.png';    
+         var fallback='http://www.janklowandnesbit.co.uk/sites/default/files/imagecache/large/imagefield_default_images/default_book_cover.jpg';    
 
         return (
             <div className="book">
