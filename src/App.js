@@ -6,6 +6,7 @@ import SearchBook from "./components/SearchBook";
 import {Route} from 'react-router-dom';
 
 class BooksApp extends React.Component {
+
   constructor(args) {
     super(args);
     this.state = {
@@ -17,9 +18,12 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     BooksAPI.getAll().then(books => {
-      this.setState({ books: books, loading: false });
+      this.setState({ 
+        books: books,
+        loading: false });
     });
   }
+
 
   onShelfChange = (book, shelf) => {
     BooksAPI.update(book, shelf).then(
@@ -35,10 +39,11 @@ class BooksApp extends React.Component {
         loading: false
       }))
     );
+   this.componentDidMount();
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     const state = this.state;
     const currentlyReading = state.books.filter(
       book => book.shelf === "currentlyReading"
