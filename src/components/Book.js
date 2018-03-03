@@ -8,6 +8,15 @@ export default class Book extends Component {
 
     render() {
         const {book} = this.props;
+        if (!book.imageLinks){
+            book.imageLinks={};
+                }
+        if(!book.authors){
+            book.authors=[];
+        }
+
+        // var imgg1 = 'https://www.revlocal.com/Files/FeedImages/12-Digital-Marketing-Ideas-for-Small-Businesses-in-2018.png';
+        var fallback='https://davismarketingcompany.com/wp-content/uploads/2016/01/avatar_placeholder_small.png';    
 
         return (
             <div className="book">
@@ -15,11 +24,13 @@ export default class Book extends Component {
                     <div className="book-cover" style={{
                         width: 128,
                         height: 190,
-                        backgroundImage: `url("${ book.imageLinks.thumbnail }")`
+                        background: 'url("'+book.imageLinks.thumbnail+'"), url("'+fallback+'")'
+
+                       
                     }}/>
                     
                     <div className="book-shelf-changer">
-                        <select onChange={this.onBookShelfChange} defaultValue={book.shelf}>
+                        <select onChange={this.onBookShelfChange}  defaultValue='none'>
                             <option value="none" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
